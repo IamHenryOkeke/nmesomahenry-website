@@ -28,8 +28,8 @@ export default function Intro() {
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         const counter = { value: 0 };
 
-        gsap.set(".line-inner", { yPercent: 110 });
-        gsap.set(".fade-item", { opacity: 0, y: 16 });
+        gsap.set(".line-inner", { yPercent: 110, autoAlpha: 1 });
+        gsap.set(".fade-item", { autoAlpha: 0, y: 16 });
         gsap.set(barRef.current, { scaleX: 0, transformOrigin: "left center" });
 
         const tl = gsap.timeline({
@@ -38,7 +38,7 @@ export default function Intro() {
         });
 
         tl.to(".fade-item", {
-          opacity: 1,
+          autoAlpha: 1,
           y: 0,
           duration: 0.6,
           stagger: 0.08,
@@ -84,7 +84,7 @@ export default function Intro() {
           .to(
             ".fade-item",
             {
-              opacity: 0,
+              autoAlpha: 0,
               y: -12,
               duration: 0.4,
               stagger: 0.05,
@@ -113,10 +113,10 @@ export default function Intro() {
     <div ref={container}>
       <div className="intro-container fixed inset-0 z-50 flex h-screen w-full flex-col justify-between bg-[#1E1E1E] px-6 py-8 text-[#F7F5F2] md:px-20 md:py-12">
         <div className="flex items-center justify-between">
-          <p className="fade-item font-mono text-sm font-medium text-[#C47A55] md:text-base">
+          <p className="fade-item invisible font-mono text-sm font-medium text-[#C47A55] md:text-base">
             NmesomaHenry
           </p>
-          <p className="fade-item flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#F7F5F2]/60 md:text-xs">
+          <p className="fade-item invisible flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#F7F5F2]/60 md:text-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#C47A55]" />
             Frontend engineer
           </p>
@@ -124,26 +124,26 @@ export default function Intro() {
 
         <div className="flex flex-col">
           <div className="overflow-hidden pb-2">
-            <h1 className="line-inner text-5xl font-semibold leading-[1.05] tracking-tight md:text-8xl">
+            <h1 className="line-inner invisible text-5xl font-semibold leading-[1.05] tracking-tight md:text-8xl">
               Hello, I&apos;m Henry.
             </h1>
           </div>
           <div className="overflow-hidden pb-2">
-            <h1 className="line-inner text-5xl font-semibold leading-[1.05] tracking-tight text-[#C47A55] md:text-8xl">
+            <h1 className="line-inner invisible text-5xl font-semibold leading-[1.05] tracking-tight text-[#C47A55] md:text-8xl">
               Building for the web.
             </h1>
           </div>
         </div>
 
         <div className="flex flex-col gap-5">
-          <div className="fade-item h-px w-full bg-[#F7F5F2]/15">
+          <div className="fade-item invisible h-px w-full bg-[#F7F5F2]/15">
             <div ref={barRef} className="h-full w-full bg-[#C47A55]" />
           </div>
           <div className="flex w-full items-end justify-between">
-            <p className="fade-item font-mono text-[10px] uppercase tracking-widest text-[#F7F5F2]/60 md:text-xs">
+            <p className="fade-item invisible font-mono text-[10px] uppercase tracking-widest text-[#F7F5F2]/60 md:text-xs">
               Okeke Nmesomachukwu Henry
             </p>
-            <p className="fade-item font-mono text-5xl leading-none text-[#F7F5F2] md:text-8xl">
+            <p className="fade-item invisible font-mono text-5xl leading-none text-[#F7F5F2] md:text-8xl">
               <span ref={countRef}>000</span>
               <span className="text-[#C47A55]">%</span>
             </p>
