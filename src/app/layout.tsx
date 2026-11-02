@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Intro from "@/components/intro";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NmesomaHenry",
-
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Intro />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

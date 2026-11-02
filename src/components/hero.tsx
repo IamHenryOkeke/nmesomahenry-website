@@ -3,11 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import {
-  ArrowDownIcon,
-  ArrowRightIcon,
-  ArrowTopRightIcon,
-} from "@radix-ui/react-icons";
+import { ArrowDownIcon, ArrowRightIcon, ArrowUpRight } from "lucide-react";
 
 type HeroProps = {
   delay?: number;
@@ -55,7 +51,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               stagger: 0.15,
               ease: "power4.out",
             },
-            "-=0.5"
+            "-=0.5",
           )
           .to(
             ".hero-brace",
@@ -66,7 +62,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               duration: 1,
               ease: "power3.out",
             },
-            "-=0.8"
+            "-=0.8",
           )
           .to(
             ".hero-body",
@@ -76,7 +72,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               duration: 0.8,
               stagger: 0.1,
             },
-            "-=0.7"
+            "-=0.7",
           )
           .to(
             ".hero-rule",
@@ -85,7 +81,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               duration: 1.2,
               ease: "power3.inOut",
             },
-            "-=0.5"
+            "-=0.5",
           )
           .to(
             ".hero-foot",
@@ -95,7 +91,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               duration: 0.7,
               stagger: 0.1,
             },
-            "-=0.8"
+            "-=0.8",
           );
 
         gsap.to(".hero-brace", {
@@ -110,16 +106,16 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
 
       return () => mm.revert();
     },
-    { scope: container, dependencies: [delay] }
+    { scope: container, dependencies: [delay] },
   );
 
   return (
     <section
       ref={container}
       id="top"
-      className="bg-[#F7F5F2] px-6 pb-10 pt-10 text-[#1E1E1E] md:px-20 md:pb-12 md:pt-12"
+      className="bg-[#F7F5F2] px-4 pb-10 pt-10 text-[#1E1E1E] md:px-20 md:pb-12 md:pt-12"
     >
-      <div className="flex items-center justify-between font-mono text-[8px] uppercase tracking-widest text-[#1E1E1E]/60 md:text-xs">
+      <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:flex-row md:items-center md:justify-between md:text-xs">
         <p className="hero-fade hero-meta invisible">Frontend engineer</p>
         <p className="hero-fade hero-meta invisible flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-[#8B4A2F]" />
@@ -135,7 +131,9 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
         </span>
         <span className="flex items-end justify-between text-[#8B4A2F]">
           <span className="overflow-hidden pb-[0.08em]">
-            <span className="hero-line invisible block">Solid foundations.</span>
+            <span className="hero-line invisible block">
+              Solid foundations.
+            </span>
           </span>
           <span
             aria-hidden="true"
@@ -148,9 +146,22 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
       </h1>
 
       <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12">
-        <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:col-span-4 md:text-xs">
-          <p className="hero-fade hero-body invisible">A little design-minded.</p>
-          <p className="hero-fade hero-body invisible">A lot detail-oriented.</p>
+        <div className="flex items-start justify-between md:col-span-4">
+          <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:text-xs">
+            <p className="hero-fade hero-body invisible">
+              A little design-minded.
+            </p>
+            <p className="hero-fade hero-body invisible">
+              A lot detail-oriented.
+            </p>
+          </div>
+          <span
+            aria-hidden="true"
+            className="hero-brace invisible flex gap-3 font-mono text-4xl font-light leading-none text-[#8B4A2F] md:hidden"
+          >
+            <span>{"{"}</span>
+            <span>{"}"}</span>
+          </span>
         </div>
 
         <div className="md:col-span-6 md:col-start-5">
@@ -163,19 +174,19 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="hero-fade hero-body group invisible inline-flex items-center gap-8 bg-[#8B4A2F] px-5 py-3.5 text-sm font-medium text-[#F7F5F2] transition-colors hover:bg-[#6F3A24]"
+              className="hero-fade hero-body group invisible inline-flex items-center gap-3 bg-[#8B4A2F] px-4 py-3.5 text-sm font-medium text-[#F7F5F2] transition-colors hover:bg-[#6F3A24] md:gap-8 md:px-5"
             >
               Explore selected work
-              <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRightIcon className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 md:h-6 md:w-6" />
             </a>
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-fade hero-body group invisible inline-flex items-center gap-8 border border-[#1E1E1E]/15 px-5 py-3.5 text-sm font-medium transition-colors hover:border-[#1E1E1E]/40"
+              className="hero-fade hero-body group invisible inline-flex items-center gap-3 border border-[#1E1E1E]/15 px-4 py-3.5 text-sm font-medium transition-colors hover:border-[#1E1E1E]/40 md:gap-8 md:px-5"
             >
               Résumé
-              <ArrowTopRightIcon className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 md:h-6 md:w-6" />
             </a>
           </div>
         </div>
@@ -183,16 +194,16 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
 
       <div className="mt-16 md:mt-24">
         <div className="hero-rule invisible h-px w-full bg-[#1E1E1E]/10" />
-        <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:text-xs">
+        <div className="mt-5 flex flex-col gap-4 font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:flex-row md:items-center md:justify-between md:text-xs">
           <p className="hero-fade hero-foot invisible">
             Less friction. More intention.
           </p>
           <a
             href="#work"
-            className="hero-fade hero-foot invisible inline-flex items-center gap-2"
+            className="hero-fade hero-foot invisible flex w-full items-center justify-between md:inline-flex md:w-auto md:justify-start md:gap-2"
           >
             Selected work below
-            <ArrowDownIcon />
+            <ArrowDownIcon className="text-sm" />
           </a>
         </div>
       </div>

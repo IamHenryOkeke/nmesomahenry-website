@@ -3,22 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { AnimatedArrow } from "./animated-arrow";
 
 const links = [
   { label: "Work", href: "#work" },
   { label: "Approach", href: "#approach" },
   { label: "About", href: "#about" },
 ];
-
-function AnimatedArrow() {
-  return (
-    <span className="relative inline-block h-3.75 w-3.75 overflow-hidden">
-      <ArrowTopRightIcon className="transition-transform duration-300 ease-out group-hover:-translate-y-full group-hover:translate-x-full" />
-      <ArrowTopRightIcon className="absolute inset-0 -translate-x-full translate-y-full transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
-    </span>
-  );
-}
 
 export default function Navbar() {
   const container = useRef<HTMLElement | null>(null);
@@ -106,7 +97,7 @@ export default function Navbar() {
       <div
         ref={panelRef}
         id="mobile-menu"
-        className="menu-panel invisible fixed inset-0 z-40 flex flex-col justify-between bg-[#1E1E1E] px-6 pb-10 pt-28 text-[#F7F5F2]"
+        className="menu-panel invisible fixed inset-0 z-40 flex flex-col justify-between bg-[#1E1E1E] px-4 pb-10 pt-28 text-[#F7F5F2]"
       >
         <nav className="flex flex-col gap-2">
           {links.map((link) => (
@@ -134,7 +125,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="relative z-50 mx-auto px-6 md:px-20">
+      <div className="relative z-50 mx-auto px-4 md:px-20">
         <div
           className={`flex items-center justify-between border-b py-5 transition-colors duration-500 md:py-6 ${open ? "border-transparent" : "border-[#1E1E1E]/10"
             }`}
