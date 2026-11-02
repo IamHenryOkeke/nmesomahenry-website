@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -11,7 +11,12 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, DrawSVGPlugin);
 
 export default function Footer() {
   const container = useRef<HTMLElement | null>(null);
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState<number>();
+
+  useEffect(() => {
+    const currentYear = new Date().getFullYear();
+    setYear(currentYear);
+  }, []);
 
   useGSAP(
     () => {
