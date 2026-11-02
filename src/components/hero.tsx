@@ -119,7 +119,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
       id="top"
       className="bg-[#F7F5F2] px-6 pb-10 pt-10 text-[#1E1E1E] md:px-20 md:pb-12 md:pt-12"
     >
-      <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-[#1E1E1E]/60 md:text-xs">
+      <div className="flex items-center justify-between font-mono text-[8px] uppercase tracking-widest text-[#1E1E1E]/60 md:text-xs">
         <p className="hero-fade hero-meta invisible">Frontend engineer</p>
         <p className="hero-fade hero-meta invisible flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-[#8B4A2F]" />
