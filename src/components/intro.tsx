@@ -111,7 +111,7 @@ export default function Intro() {
 
   return (
     <div ref={container}>
-      <div className="intro-container fixed inset-0 z-50 flex h-screen w-full flex-col justify-between bg-[#1E1E1E] px-6 py-8 text-[#F7F5F2] md:px-20 md:py-12">
+      <div className="intro-container fixed inset-0 z-50 flex h-dvh w-full flex-col justify-between bg-[#1E1E1E] px-6 pb-12 pt-8 text-[#F7F5F2] md:px-20 md:py-12">
         <div className="flex items-center justify-between">
           <p className="fade-item invisible font-mono text-sm font-medium text-[#C47A55] md:text-base">
             NmesomaHenry

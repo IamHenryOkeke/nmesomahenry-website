@@ -146,9 +146,6 @@ export default function Navbar() {
             >
               NmesomaHenry
             </span>
-            <span className="hidden text-sm font-medium lg:inline">
-              Henry Nmesomachukwu Okeke
-            </span>
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
