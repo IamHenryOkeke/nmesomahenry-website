@@ -180,7 +180,7 @@ export default function Hero({ delay = 3.9 }: HeroProps) {
               <ArrowRightIcon className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 md:h-6 md:w-6" />
             </a>
             <a
-              href="/resume.pdf"
+              href="https://docs.google.com/document/d/1GUM19PzVDyRsvzGQn23YzJRLpXGYub9_tihTAhYC-Vg/edit?tab=t.0"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-fade hero-body group invisible inline-flex items-center gap-3 border border-[#1E1E1E]/15 px-4 py-3.5 text-sm font-medium transition-colors hover:border-[#1E1E1E]/40 md:gap-8 md:px-5"
